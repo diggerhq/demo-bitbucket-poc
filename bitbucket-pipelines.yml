@@ -1,0 +1,16 @@
+image: dockerdiggerorg/digger:docker-release
+
+pipelines:
+  pull-requests:
+    '**':
+     - step:
+         name: pull request pipeline
+         script:
+          - digger
+  branches:
+    master:
+      - step:
+          name: default branch pipeline
+          script:
+            - digger
+
